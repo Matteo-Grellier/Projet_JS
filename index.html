@@ -7,22 +7,34 @@
     <title>Document</title>
 </head>
 <body>
+    <div id="myData"></div>
     <script>
 
-    const api_url = 'https://rawcdn.githack.com/akabab/superhero-api/0.2.0/api/all.json'
+        const api_url = 'https://rawcdn.githack.com/akabab/superhero-api/0.2.0/api/all.json'
 
-    async function loadData() {
+        fetch('https://rawcdn.githack.com/akabab/superhero-api/0.2.0/api/all.json')
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (data) {
+                appendData(data);
+            })
+            .catch(function (err) {
+                console.log('error: ' + err);
+            });
 
-        const response = await fetch(api_url);
-        const heroes = await response.json()
+        function appendData(heroes) {
+            var mainContainer = document.getElementById("myData")
+            for (var i = 0; i < heroes.length; i++) {
+                var div = document.createElement("div");
+                div.innerHTML = 'Name: ' + heroes[i].name;
+                mainContainer.appendChild(div);
 
-        console.log(heroes)
-    }   
+            }
+        }
 
-    loadData();
-
+                            //loadData();
     </script>
     <h1> Projet JS</h1>
-    
 </body>
 </html>
