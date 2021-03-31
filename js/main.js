@@ -24,7 +24,7 @@ export function display() {
             mainContainer.appendChild(race);
             
             var picture = document.getElementById("img");
-            img.src = heroes[i].images.xs;
+            img.src = heroes[i].images.sm;
             mainContainer.appendChild(img.src);
 
         }
