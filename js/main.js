@@ -6,6 +6,8 @@ export function display() {
         .then(function (data) {
             appendData(data);
         })
+    
+
         .catch(function (err) {
             console.log('error: ' + err);
         });
@@ -16,7 +18,17 @@ export function display() {
             var div = document.createElement("div");
             div.innerHTML = 'Name: ' + heroes[i].name;
             mainContainer.appendChild(div);
+
+            var race = document.createElement("race");
+            race.innerHTML = 'Race: ' + heroes[i].appearance.race;
+            mainContainer.appendChild(race);
+            
+            var picture = document.getElementById("img");
+            img.src = heroes[i].images.xs;
+            mainContainer.appendChild(img.src);
+
         }
+    
     }
 }
 
