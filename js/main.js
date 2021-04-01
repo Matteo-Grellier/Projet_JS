@@ -22,10 +22,6 @@ export function display() {
             var race = document.createElement("race");
             race.innerHTML = 'Race: ' + heroes[i].appearance.race;
             mainContainer.appendChild(race);
-            
-            var picture = document.getElementById("img");
-            img.src = heroes[i].images.sm;
-            mainContainer.appendChild(img.src);
 
         }
     
