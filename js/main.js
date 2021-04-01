@@ -23,6 +23,9 @@ export function display() {
             race.innerHTML = 'Race: ' + heroes[i].appearance.race;
             mainContainer.appendChild(race);
 
+            var picture = document.getElementById("img");
+            picture.innerHTML = heroes[i].images.sm;
+            mainContainer.appendChild(picture);
         }
     
     }
