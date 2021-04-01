@@ -15,17 +15,31 @@ export function display() {
     function appendData(heroes) {
         var mainContainer = document.getElementById("myData")
         for (var i = 0; i < heroes.length; i++) {
-            var div = document.createElement("div");
-            div.innerHTML = 'Name: ' + heroes[i].name;
-            mainContainer.appendChild(div);
+            
 
-            var race = document.createElement("race");
-            race.innerHTML = 'Race: ' + heroes[i].appearance.race;
-            mainContainer.appendChild(race);
-
-            var picture = document.getElementById("img");
+            /* var picture = document.getElementById("img");
             picture.innerHTML = heroes[i].images.sm;
-            mainContainer.appendChild(picture);
+            mainContainer.appendChild(picture);*/
+
+            var tableau = document.getElementById("tab");
+            var row = tableau.insertRow();
+
+            var icon = row.insertCell();
+            var div = row.insertCell();
+            var FullName = row.insertCell();
+            var powerstats = row.insertCell();
+            var appearence = row.insertCell();
+            var placeOfBirth = row.insertCell();
+            var alignment = row.insertCell();
+
+            icon.innerHTML = heroes[i].images.xs;
+            div.innerHTML = 'Name: ' + heroes[i].name;
+            FullName.innerHTML = 'Full Name: ' + heroes[i].biography.fullName;
+            powerstats.innerHTML = 'Powerstats: ' + heroes[i].powerstats;
+            appearence.innerHTML = 'Race: ' + heroes[i].appearance.race + ' / Gender: ' + heroes[i].appearance.gender + '\n / Height: ' + heroes[i].appearance.height + ' / Weight: ' + heroes[i].appearance.weight;
+            placeOfBirth.innerHTML = 'Place of Birth: ' + heroes[i].biography.placeOfBirth;
+            alignment.innerHTML = heroes[i].biography.alignment;
+            mainContainer.appendChild(tableau);
         }
     
     }
