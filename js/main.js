@@ -16,6 +16,10 @@ export function display() {
             var div = document.createElement("div");
             div.innerHTML = 'Name: ' + heroes[i].name;
             mainContainer.appendChild(div);
+
+            var race = document.createElement("race");
+            race.innerHTML = 'Race: ' + heroes[i].appearance.race;
+            mainContainer.appendChild(race);
         }
     }
 }
