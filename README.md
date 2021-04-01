@@ -10,7 +10,9 @@ Pour utiliser ce projet vous devez simplement lancer le ficher .html dans le dos
 
 ## Arborescence_du_projet
 Notre arborescence du projet ressemble à ceci : 
+
 ![test](./images/Arborescence_du_projet.png "Arborescence du projet")
+
 On a : 
  - Un dossier ou l'on met nos images comme pour celle ci-dessus
  - Un dossier js ou l'on met notre script 
@@ -19,7 +21,7 @@ On a :
  - Le README.MD
  - Et le fichier style.css pour personaliser la page
 ## Organisation_du_code
-Notre est organiser en plusieurs fonctions dans le fichier main.js voir [arborescence](https://github.com/Matteo-Grellier/Projet_JS#Arborescence_du_projet)
+Notre est organiser en plusieurs fonctions dans le fichier main.js voir [arborescence](#Arborescence_du_projet)
 ## Répartition_des_tâches
 On a réparti les taches entre tout les membres de sorte à ce que personne ne fasse la meme chose pour éviter les problèmes 
 ## Choses_à_revoir_ou_à_améliorer

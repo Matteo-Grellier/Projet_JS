@@ -9,7 +9,6 @@ export function display() {
         .catch(function (err) {
             console.log('error: ' + err);
         });
-
     function appendData(heroes) {
         var mainContainer = document.getElementById("myData")
         for (var i = 0; i < heroes.length; i++) {
