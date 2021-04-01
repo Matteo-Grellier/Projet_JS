@@ -16,11 +16,6 @@ export function display() {
         var mainContainer = document.getElementById("myData")
         for (var i = 0; i < heroes.length; i++) {
             
-
-            /* var picture = document.getElementById("img");
-            picture.innerHTML = heroes[i].images.sm;
-            mainContainer.appendChild(picture);*/
-
             var tableau = document.getElementById("tab");
             var row = tableau.insertRow();
 
@@ -32,16 +27,26 @@ export function display() {
             var placeOfBirth = row.insertCell();
             var alignment = row.insertCell();
 
-            icon.innerHTML = heroes[i].images.xs;
+            icon.innerHTML = heroes[i].images.sm;
             div.innerHTML = 'Name: ' + heroes[i].name;
             FullName.innerHTML = 'Full Name: ' + heroes[i].biography.fullName;
             powerstats.innerHTML = 'Powerstats: ' + heroes[i].powerstats;
             appearence.innerHTML = 'Race: ' + heroes[i].appearance.race + ' / Gender: ' + heroes[i].appearance.gender + '\n / Height: ' + heroes[i].appearance.height + ' / Weight: ' + heroes[i].appearance.weight;
             placeOfBirth.innerHTML = 'Place of Birth: ' + heroes[i].biography.placeOfBirth;
             alignment.innerHTML = heroes[i].biography.alignment;
+
+
             mainContainer.appendChild(tableau);
+
+
+            /* var images = ["https://rawcdn.githack.com/akabab/superhero-api/0.2.0/api/all.json"];
+            for( let i = 0; i < images.length; i++) {
+            var tableau = document.getElementById("img").src = images[i];
+            } */
+            
+
         }
-    
+        
     }
 }
 
