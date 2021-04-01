@@ -6,7 +6,8 @@ export function display() {
         .then(function (data) {
             appendData(data);
         })
-        
+    
+
         .catch(function (err) {
             console.log('error: ' + err);
         });
@@ -14,7 +15,19 @@ export function display() {
     function appendData(heroes) {
         var mainContainer = document.getElementById("myData")
         for (var i = 0; i < heroes.length; i++) {
-            var div = document.createElement("div");
+            
+            var tableau = document.getElementById("tab");
+            var row = tableau.insertRow();
+
+            var icon = row.insertCell();
+            var div = row.insertCell();
+            var FullName = row.insertCell();
+            var powerstats = row.insertCell();
+            var appearence = row.insertCell();
+            var placeOfBirth = row.insertCell();
+            var alignment = row.insertCell();
+
+            icon.innerHTML = heroes[i].images.sm;
             div.innerHTML = 'Name: ' + heroes[i].name;
             mainContainer.appendChild(div);
 
@@ -28,6 +41,7 @@ export function display() {
             
             
         }
+        
     }
 
 }
