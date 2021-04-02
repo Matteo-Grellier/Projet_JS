@@ -13,10 +13,11 @@ export function display() {
             console.log('error: ' + err);
         });
 
+        
     function appendData(heroes) {
         var mainContainer = document.getElementById("myData")
         for (var i = 0; i < heroes.length; i++) {
-            
+        
             var tableau = document.getElementById("tab");
             var row = tableau.insertRow();
 
@@ -33,11 +34,6 @@ export function display() {
             icon.style = imageName;
 
             div.innerHTML = 'Name: ' + heroes[i].name;
-            mainContainer.appendChild(div);
-
-            var race = document.createElement("race");
-            race.innerHTML = 'Race: ' + heroes[i].appearance.race;
-            mainContainer.appendChild(race);
             FullName.innerHTML = 'Full Name: ' + heroes[i].biography.fullName;
             powerstats.innerHTML = 'Intelligence: ' + heroes[i].powerstats.intelligence + '/ Strength: ' + heroes[i].powerstats.strength + '/ Speed: ' + heroes[i].powerstats.speed + '/ Durability: ' + heroes[i].powerstats.durability + '/ Power: ' + heroes[i].powerstats.power + '/ Combat: ' + heroes[i].powerstats.combat;
             appearence.innerHTML = 'Race: ' + heroes[i].appearance.race + ' / Gender: ' + heroes[i].appearance.gender + '\n / Height: ' + heroes[i].appearance.height + ' / Weight: ' + heroes[i].appearance.weight;
@@ -46,6 +42,7 @@ export function display() {
 
 
             mainContainer.appendChild(tableau);
+
         }
     }
 }
@@ -60,10 +57,6 @@ export function srch(heroes) {
         valid.push(false)
         for (const property in heroes[i]) {
 
-        }
-        
-    }
-}
             if (typeof heroes[i][property] == 'object') {
 
                 for (const subproperty in heroes[i][property]) {
