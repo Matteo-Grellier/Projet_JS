@@ -7,6 +7,8 @@ export function display() {
             appendData(data);
             document.getElementById("srch").onclick = function() {srch(data)};
         })
+    
+
         .catch(function (err) {
             console.log('error: ' + err);
         });
@@ -14,7 +16,19 @@ export function display() {
     function appendData(heroes) {
         var mainContainer = document.getElementById("myData")
         for (var i = 0; i < heroes.length; i++) {
-            var div = document.createElement("div");
+            
+            var tableau = document.getElementById("tab");
+            var row = tableau.insertRow();
+
+            var icon = row.insertCell();
+            var div = row.insertCell();
+            var FullName = row.insertCell();
+            var powerstats = row.insertCell();
+            var appearence = row.insertCell();
+            var placeOfBirth = row.insertCell();
+            var alignment = row.insertCell();
+
+            icon.innerHTML = heroes[i].images.sm;
             div.innerHTML = 'Name: ' + heroes[i].name;
             mainContainer.appendChild(div);
 
@@ -66,7 +80,17 @@ export function srch(heroes) {
         }
         if (valid[i] == true) {
             finded.push(heroes[i])
+            FullName.innerHTML = 'Full Name: ' + heroes[i].biography.fullName;
+            powerstats.innerHTML = 'Intelligence: ' + heroes[i].powerstats.intelligence + '/ Strength: ' + heroes[i].powerstats.strength + '/ Speed: ' + heroes[i].powerstats.speed + '/ Durability: ' + heroes[i].powerstats.durability + '/ Power: ' + heroes[i].powerstats.power + '/ Combat: ' + heroes[i].powerstats.combat;
+            appearence.innerHTML = 'Race: ' + heroes[i].appearance.race + ' / Gender: ' + heroes[i].appearance.gender + '\n / Height: ' + heroes[i].appearance.height + ' / Weight: ' + heroes[i].appearance.weight;
+            placeOfBirth.innerHTML = 'Place of Birth: ' + heroes[i].biography.placeOfBirth;
+            alignment.innerHTML = heroes[i].biography.alignment;
+
+
+            mainContainer.appendChild(tableau);
+
         }
+        
     }
     console.log(finded)
 }
