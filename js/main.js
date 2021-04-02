@@ -11,7 +11,7 @@ export function display() {
         .catch(function (err) {
             console.log('error: ' + err);
         });
-        
+
     function appendData(heroes) {
         var mainContainer = document.getElementById("myData")
         for (var i = 0; i < heroes.length; i++) {
@@ -29,23 +29,17 @@ export function display() {
 
             icon.innerHTML = heroes[i].images.sm;
             div.innerHTML = 'Name: ' + heroes[i].name;
-            mainContainer.appendChild(div);
+            FullName.innerHTML = 'Full Name: ' + heroes[i].biography.fullName;
+            powerstats.innerHTML = 'Intelligence: ' + heroes[i].powerstats.intelligence + '/ Strength: ' + heroes[i].powerstats.strength + '/ Speed: ' + heroes[i].powerstats.speed + '/ Durability: ' + heroes[i].powerstats.durability + '/ Power: ' + heroes[i].powerstats.power + '/ Combat: ' + heroes[i].powerstats.combat;
+            appearence.innerHTML = 'Race: ' + heroes[i].appearance.race + ' / Gender: ' + heroes[i].appearance.gender + '\n / Height: ' + heroes[i].appearance.height + ' / Weight: ' + heroes[i].appearance.weight;
+            placeOfBirth.innerHTML = 'Place of Birth: ' + heroes[i].biography.placeOfBirth;
+            alignment.innerHTML = heroes[i].biography.alignment;
 
-            var race = document.createElement("race");
-            race.innerHTML = 'Race: ' + heroes[i].appearance.race;
-            mainContainer.appendChild(race);
 
-            var powerStats = document.createElement("powerStats");
-            powerStats.innerHTML = 'PowerStats: ' + heroes[i].powerStats;
-            mainContainer.appendChild(powerStats);
-            
-            
+            mainContainer.appendChild(tableau);
+
         }
         
     }
-
 }
-
-
-
 
