@@ -6,7 +6,6 @@ export function display() {
         .then(function (data) {
             appendData(data);
         })
-    
 
         .catch(function (err) {
             console.log('error: ' + err);
@@ -14,7 +13,6 @@ export function display() {
     function appendData(heroes) {
         var mainContainer = document.getElementById("myData")
         for (var i = 0; i < heroes.length; i++) {
-            
             var tableau = document.getElementById("tab");
             var row = tableau.insertRow();
 
@@ -34,25 +32,19 @@ export function display() {
             placeOfBirth.innerHTML = 'Place of Birth: ' + heroes[i].biography.placeOfBirth;
             alignment.innerHTML = heroes[i].biography.alignment;
 
-
             mainContainer.appendChild(tableau);
-
 
             /* var images = ["https://rawcdn.githack.com/akabab/superhero-api/0.2.0/api/all.json"];
             for( let i = 0; i < images.length; i++) {
             var tableau = document.getElementById("img").src = images[i];
             } */
-            
-
         }
-        
     }
 }
 
 /* const api_url = 'https://rawcdn.githack.com/akabab/superhero-api/0.2.0/api/all.json'
 
 async const loadData = heroes => {
-
     var heroes = document.createElement("heroes")
 
     const response = await fetch(api_url);
@@ -61,7 +53,7 @@ async const loadData = heroes => {
     console.log(heroeDescription)
 
     heroes.textContent = heroeDescription
-    
+
     body.appendChild(heroes)
 }
 
