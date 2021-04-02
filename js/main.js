@@ -30,7 +30,7 @@ export function display() {
             icon.innerHTML = heroes[i].images.sm;
             div.innerHTML = 'Name: ' + heroes[i].name;
             FullName.innerHTML = 'Full Name: ' + heroes[i].biography.fullName;
-            powerstats.innerHTML = 'Powerstats: ' + heroes[i].powerstats;
+            powerstats.innerHTML = 'Intelligence: ' + heroes[i].powerstats.intelligence + '/ Strength: ' + heroes[i].powerstats.strength + '/ Speed: ' + heroes[i].powerstats.speed + '/ Durability: ' + heroes[i].powerstats.durability + '/ Power: ' + heroes[i].powerstats.power + '/ Combat: ' + heroes[i].powerstats.combat;
             appearence.innerHTML = 'Race: ' + heroes[i].appearance.race + ' / Gender: ' + heroes[i].appearance.gender + '\n / Height: ' + heroes[i].appearance.height + ' / Weight: ' + heroes[i].appearance.weight;
             placeOfBirth.innerHTML = 'Place of Birth: ' + heroes[i].biography.placeOfBirth;
             alignment.innerHTML = heroes[i].biography.alignment;
@@ -38,32 +38,8 @@ export function display() {
 
             mainContainer.appendChild(tableau);
 
-
-            /* var images = ["https://rawcdn.githack.com/akabab/superhero-api/0.2.0/api/all.json"];
-            for( let i = 0; i < images.length; i++) {
-            var tableau = document.getElementById("img").src = images[i];
-            } */
-            
-
         }
         
     }
 }
 
-/* const api_url = 'https://rawcdn.githack.com/akabab/superhero-api/0.2.0/api/all.json'
-
-async const loadData = heroes => {
-
-    var heroes = document.createElement("heroes")
-
-    const response = await fetch(api_url);
-    const heroeDescription = await response.json()
-
-    console.log(heroeDescription)
-
-    heroes.textContent = heroeDescription
-    
-    body.appendChild(heroes)
-}
-
-loadData(); */
