@@ -7,8 +7,6 @@ export function display() {
             appendData(data);
             document.getElementById("srch").onclick = function() {srch(data)};
         })
-    
-
         .catch(function (err) {
             console.log('error: ' + err);
         });
@@ -31,13 +29,14 @@ export function display() {
             var imageName = ["background-image:url('", heroes[i].images.sm, "')"];
             imageName = imageName.join("");
             icon.style = imageName;
+<<<<<<< Updated upstream
 
             div.innerHTML = 'Name: ' + heroes[i].name;
             mainContainer.appendChild(div);
+=======
+>>>>>>> Stashed changes
 
-            var race = document.createElement("race");
-            race.innerHTML = 'Race: ' + heroes[i].appearance.race;
-            mainContainer.appendChild(race);
+            div.innerHTML = 'Name: ' + heroes[i].name;
             FullName.innerHTML = 'Full Name: ' + heroes[i].biography.fullName;
             powerstats.innerHTML = 'Intelligence: ' + heroes[i].powerstats.intelligence + '/ Strength: ' + heroes[i].powerstats.strength + '/ Speed: ' + heroes[i].powerstats.speed + '/ Durability: ' + heroes[i].powerstats.durability + '/ Power: ' + heroes[i].powerstats.power + '/ Combat: ' + heroes[i].powerstats.combat;
             appearence.innerHTML = 'Race: ' + heroes[i].appearance.race + ' / Gender: ' + heroes[i].appearance.gender + '\n / Height: ' + heroes[i].appearance.height + ' / Weight: ' + heroes[i].appearance.weight;
@@ -46,7 +45,9 @@ export function display() {
 
 
             mainContainer.appendChild(tableau);
+
         }
+        
     }
 }
 
