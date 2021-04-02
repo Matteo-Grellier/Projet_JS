@@ -20,7 +20,7 @@ export function display() {
             var tableau = document.getElementById("tab");
             var row = tableau.insertRow();
 
-            var icon = row.insertCell();
+            var icon = row.insertCell(); 
             var div = row.insertCell();
             var FullName = row.insertCell();
             var powerstats = row.insertCell();
@@ -28,7 +28,10 @@ export function display() {
             var placeOfBirth = row.insertCell();
             var alignment = row.insertCell();
 
-            icon.innerHTML = heroes[i].images.sm;
+            var imageName = ["background-image:url('", heroes[i].images.sm, "')"];
+            imageName = imageName.join("");
+            icon.style = imageName;
+
             div.innerHTML = 'Name: ' + heroes[i].name;
             mainContainer.appendChild(div);
 
@@ -49,6 +52,10 @@ export function srch(heroes) {
         valid.push(false)
         for (const property in heroes[i]) {
 
+        }
+        
+    }
+}
             if (typeof heroes[i][property] == 'object') {
 
                 for (const subproperty in heroes[i][property]) {
