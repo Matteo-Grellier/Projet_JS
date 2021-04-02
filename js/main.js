@@ -38,6 +38,14 @@ export function display() {
             var race = document.createElement("race");
             race.innerHTML = 'Race: ' + heroes[i].appearance.race;
             mainContainer.appendChild(race);
+            FullName.innerHTML = 'Full Name: ' + heroes[i].biography.fullName;
+            powerstats.innerHTML = 'Intelligence: ' + heroes[i].powerstats.intelligence + '/ Strength: ' + heroes[i].powerstats.strength + '/ Speed: ' + heroes[i].powerstats.speed + '/ Durability: ' + heroes[i].powerstats.durability + '/ Power: ' + heroes[i].powerstats.power + '/ Combat: ' + heroes[i].powerstats.combat;
+            appearence.innerHTML = 'Race: ' + heroes[i].appearance.race + ' / Gender: ' + heroes[i].appearance.gender + '\n / Height: ' + heroes[i].appearance.height + ' / Weight: ' + heroes[i].appearance.weight;
+            placeOfBirth.innerHTML = 'Place of Birth: ' + heroes[i].biography.placeOfBirth;
+            alignment.innerHTML = heroes[i].biography.alignment;
+
+
+            mainContainer.appendChild(tableau);
         }
     }
 }
@@ -87,14 +95,7 @@ export function srch(heroes) {
         }
         if (valid[i] == true) {
             finded.push(heroes[i])
-            FullName.innerHTML = 'Full Name: ' + heroes[i].biography.fullName;
-            powerstats.innerHTML = 'Intelligence: ' + heroes[i].powerstats.intelligence + '/ Strength: ' + heroes[i].powerstats.strength + '/ Speed: ' + heroes[i].powerstats.speed + '/ Durability: ' + heroes[i].powerstats.durability + '/ Power: ' + heroes[i].powerstats.power + '/ Combat: ' + heroes[i].powerstats.combat;
-            appearence.innerHTML = 'Race: ' + heroes[i].appearance.race + ' / Gender: ' + heroes[i].appearance.gender + '\n / Height: ' + heroes[i].appearance.height + ' / Weight: ' + heroes[i].appearance.weight;
-            placeOfBirth.innerHTML = 'Place of Birth: ' + heroes[i].biography.placeOfBirth;
-            alignment.innerHTML = heroes[i].biography.alignment;
-
-
-            mainContainer.appendChild(tableau);
+            
 
         }
         
