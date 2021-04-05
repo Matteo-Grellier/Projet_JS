@@ -9,36 +9,38 @@
     <link href="https://rawcdn.githack.com/akabab/superhero-api/0.2.0/api/all.json">
 </head>
 <body>
-    <header>
-    </header>
-
-    <section>
-    </section>
+    <button type="submit" id="nuke">clear</button>
+    <form>
+        <input type="text" id="srchContent">
+        <button type="submit" id="srch">search</button>
+    </form>
     <h1> Projet JS</h1>
+    <form>
+        <button id="page-nxt" type="submit">page suivante</button>
+        <button id="page-pre" type="submit">page precédente</button>
+    </form>
+    <form>
+        <button id="btn-10" type="submit" name="button-10" value="10">10</button>
+        <button id="btn-20" type="submit" name="button-20" value="20">20</button>
+        <button id="btn-50" type="submit" name="button-50" value="50">50</button>
+        <button id="btn-100" type="submit" name="button-100" value="100">100</button>
+    </form>
     <div id="myData"></div>
     <script type="module">
         import { display } from './js/main.js'
         display()
     </script>
+    <table border= 1 id="tab" style="width:100%">
+        <tr>
+            <th>Icon</th>
+            <th>Name</th>
+            <th>Full Name</th>
+            <th> Powerstats</th> 
+            <th>Appearences</th>
+            <th>Place of birth</th>
+            <th>Alignment</th>
+        </tr>
 
-    <img src="https://rawcdn.githack.com/akabab/superhero-api/0.2.0/api/all.json" id="img">
-    <div id="PosTableau">
-        <table id="tab">
-            <tr>
-                <th>Icon</th>
-                <th>Name</th>
-                <th>Full Name</th>
-                <th> Powerstats</th>
-                <th>Appearences</th>
-                <th>Place of birth</th>
-                <th>Alignment</th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-            </tr>
-        </table>
-    </div>
+    </table>
 </body>
 </html>

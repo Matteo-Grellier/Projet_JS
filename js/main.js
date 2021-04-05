@@ -4,37 +4,143 @@ export function display() {
             return response.json();
         })
         .then(function (data) {
+            document.getElementById("nuke").onclick = function () {
+                document.location.reload()
+                sessionStorage.clear()
+            }
+            document.getElementById("page-nxt").onclick = function () {
+                let pagelength = sessionStorage.getItem('pagelength')
+                let pagenumber = sessionStorage.getItem('pagenb')
+                if (pagenumber == null) {
+                    pagenumber = 0
+                }
+                pagenumber = parseInt(pagenumber, 10) + 1
+                let index = pagelength * pagenumber
+                if (parseInt(pagenumber) * parseInt(pagelength) > parseInt(sessionStorage.getItem('herolength'))) {
+                    pagenumber = pagenumber-2
+                } else {
+                sessionStorage.setItem('lasthero', index)
+                }
+                sessionStorage.setItem('pagenb', pagenumber)
+            }
+            document.getElementById("page-pre").onclick = function() {
+                let pagelength = sessionStorage.getItem('pagelength')
+                let pagenumber = sessionStorage.getItem('pagenb')
+                if (pagenumber == null) {
+                    pagenumber = 0
+                } else if (pagenumber > 0) {
+                    pagenumber = parseInt(pagenumber, 10) - 1
+                    let index = parseInt(pagelength) * parseInt(pagenumber)
+                    sessionStorage.setItem('lasthero', index)
+                    sessionStorage.setItem('pagenb', pagenumber)
+                }
+            }
+            document.getElementById("btn-10").onclick = function () {
+                let before = sessionStorage.getItem('pagelength')
+                if (before == 100) {
+                    let page = sessionStorage.getItem('pagenb')*10
+                    sessionStorage.setItem('pagenb', page)
+                } else if (before == 20) {
+                    let page = sessionStorage.getItem('pagenb')*2
+                    sessionStorage.setItem('pagenb', page)
+                } else if (before == 50) {
+                    let page = sessionStorage.getItem('pagenb')*5
+                    sessionStorage.setItem('pagenb', page)
+                }
+                sessionStorage.setItem('pagelength', 10)
+            }
+            document.getElementById("btn-20").onclick = function() {
+                let before = sessionStorage.getItem('pagelength')
+                if (before == 10) {
+                    let page = Math.floor(sessionStorage.getItem('pagenb')/2)
+                    sessionStorage.setItem('pagenb', page)
+                } else if (before == 100) {
+                    let page = sessionStorage.getItem('pagenb')*5
+                    sessionStorage.setItem('pagenb', page)
+                } else if (before == 50) {
+                    let page = sessionStorage.getItem('pagenb')*2.5
+                    sessionStorage.setItem('pagenb', page)
+                }
+                sessionStorage.setItem('pagelength', 20)
+            }
+            document.getElementById("btn-50").onclick = function () {
+                let before = sessionStorage.getItem('pagelength')
+                if (before == 10) {
+                    let page = Math.floor(sessionStorage.getItem('pagenb')/5)
+                    sessionStorage.setItem('pagenb', page)
+                } else if (before == 20) {
+                    let page = Math.floor(sessionStorage.getItem('pagenb')/2.5)
+                    sessionStorage.setItem('pagenb', page)
+                } else if (before == 100) {
+                    let page = sessionStorage.getItem('pagenb')*2
+                    sessionStorage.setItem('pagenb', page)
+                }
+                sessionStorage.setItem('pagelength', 50)
+            }
+            document.getElementById("btn-100").onclick = function () {
+                let before = sessionStorage.getItem('pagelength')
+                if (before == 10) {
+                    let page = Math.floor(sessionStorage.getItem('pagenb')/10)
+                    sessionStorage.setItem('pagenb', page)
+                } else if (before == 20) {
+                    let page = Math.floor(sessionStorage.getItem('pagenb')/5)
+                    sessionStorage.setItem('pagenb', page)
+                } else if (before == 50) {
+                    let page = Math.floor(sessionStorage.getItem('pagenb')/2)
+                    sessionStorage.setItem('pagenb', page)
+                }
+                sessionStorage.setItem('pagelength', 100)
+            }
             appendData(data);
-            document.getElementById("srch").onclick = function () { srch(data) };
+            document.getElementById("srch").onclick = function() {srch(data)};
         })
+    
 
         .catch(function (err) {
             console.log('error: ' + err);
         });
+
+        
     function appendData(heroes) {
+        sessionStorage.setItem('herolength', heroes.length)
         var mainContainer = document.getElementById("myData")
-        for (var i = 0; i < heroes.length; i++) {
-            var tableau = document.getElementById("tab");
-            var row = tableau.insertRow();
+        let limitpage = sessionStorage.getItem('pagelength')
+        let lasthero = sessionStorage.getItem('lasthero')
+        let page = sessionStorage.getItem('pagenb')
+        if (limitpage == null ) {
+            sessionStorage.setItem('pagelength', 20)
+            limitpage = 20
+        }
+        if (lasthero == null) {
+            sessionStorage.setItem('herostart', 0)
+            lasthero = 0
+        }
+        console.log(limitpage, lasthero, sessionStorage.getItem('pagenb'))
+        let lp = parseInt(lasthero) + parseInt(limitpage)
+        for (let i = lasthero  ; i < lp; i++) {
+        
+            let tableau = document.getElementById("tab");
+            let row = tableau.insertRow();
 
-            var icon = row.insertCell();
-            var div = row.insertCell();
-            var FullName = row.insertCell();
-            var powerstats = row.insertCell();
-            var appearence = row.insertCell();
-            var placeOfBirth = row.insertCell();
-            var alignment = row.insertCell();
-
-            var imageName = ["background-image:url('", heroes[i].images.sm, "')"];
+            let icon = row.insertCell(); 
+            let div = row.insertCell();
+            let FullName = row.insertCell();
+            let powerstats = row.insertCell();
+            let appearence = row.insertCell();
+            let placeOfBirth = row.insertCell();
+            let alignment = row.insertCell();
+            let imageName = ["background-image:url('", heroes[i].images.sm, "')"];
             imageName = imageName.join("");
             icon.style = imageName;
 
             div.innerHTML = 'Name: ' + heroes[i].name;
-            mainContainer.appendChild(div);
-
-            var race = document.createElement("race");
-            race.innerHTML = 'Race: ' + heroes[i].appearance.race;
-            mainContainer.appendChild(race);
+            FullName.innerHTML = 'Full Name: ' + heroes[i].biography.fullName;
+            powerstats.innerHTML = 'Intelligence: ' + heroes[i].powerstats.intelligence + '/ Strength: ' + heroes[i].powerstats.strength + '/ Speed: ' + heroes[i].powerstats.speed + '/ Durability: ' + heroes[i].powerstats.durability + '/ Power: ' + heroes[i].powerstats.power + '/ Combat: ' + heroes[i].powerstats.combat;
+            appearence.innerHTML = 'Race: ' + heroes[i].appearance.race + ' / Gender: ' + heroes[i].appearance.gender + '\n / Height: ' + heroes[i].appearance.height + ' / Weight: ' + heroes[i].appearance.weight;
+            placeOfBirth.innerHTML = 'Place of Birth: ' + heroes[i].biography.placeOfBirth;
+            alignment.innerHTML = heroes[i].biography.alignment;
+            mainContainer.appendChild(tableau);
+            sessionStorage.setItem('currentindex', i)
         }
     }
 }
@@ -48,39 +154,43 @@ export function srch(heroes) {
     for (let i = 0; i < heroes.length; i++) {
         valid.push(false)
         for (const property in heroes[i]) {
-        }
-    }
-}
-if (typeof heroes[i][property] == 'object') {
-    for (const subproperty in heroes[i][property]) {
-        if (typeof heroes[i][property][subproperty] == 'object') {
-            for (const sublist in heroes[i][property][subproperty]) {
-                if (search.test(heroes[i][property][subproperty][sublist]) == true) {
+
+            if (typeof heroes[i][property] == 'object') {
+
+                for (const subproperty in heroes[i][property]) {
+
+                    if (typeof heroes[i][property][subproperty] == 'object') {
+
+                        for (const sublist in heroes[i][property][subproperty]) {
+
+                            if (search.test(heroes[i][property][subproperty][sublist]) == true) {
+                                valid[i] = true
+
+                            }
+                        }
+                    } else {
+
+                        if (search.test(heroes[i][property][subproperty]) == true) {
+                            valid[i] = true
+
+                        }
+                    }
+                }
+            } else {
+
+                if (search.test(heroes[i][property]) == true) {
                     valid[i] = true
+
                 }
             }
-        } else {
-            if (search.test(heroes[i][property][subproperty]) == true) {
-                valid[i] = true
-            }
         }
-    }
-} else {
-    if (search.test(heroes[i][property]) == true) {
-        valid[i] = true
-    }
-}
-        }
-if (valid[i] == true) {
-    finded.push(heroes[i])
-    FullName.innerHTML = 'Full Name: ' + heroes[i].biography.fullName;
-    powerstats.innerHTML = 'Intelligence: ' + heroes[i].powerstats.intelligence + '/ Strength: ' + heroes[i].powerstats.strength + '/ Speed: ' + heroes[i].powerstats.speed + '/ Durability: ' + heroes[i].powerstats.durability + '/ Power: ' + heroes[i].powerstats.power + '/ Combat: ' + heroes[i].powerstats.combat;
-    appearence.innerHTML = 'Race: ' + heroes[i].appearance.race + ' / Gender: ' + heroes[i].appearance.gender + '\n / Height: ' + heroes[i].appearance.height + ' / Weight: ' + heroes[i].appearance.weight;
-    placeOfBirth.innerHTML = 'Place of Birth: ' + heroes[i].biography.placeOfBirth;
-    alignment.innerHTML = heroes[i].biography.alignment;
+        if (valid[i] == true) {
+            finded.push(heroes[i])
+            
 
-    mainContainer.appendChild(tableau);
-}
+        }
+        
     }
-console.log(finded)
+    sessionStorage("reccherche", finded)
+    console.log(finded)
 }
