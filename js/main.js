@@ -104,22 +104,6 @@ export function display() {
     function appendData(heroes) {
         sessionStorage.setItem('herolength', heroes.length)
         var mainContainer = document.getElementById("myData")
-<<<<<<< Updated upstream
-        for (var i = 0; i < heroes.length; i++) {
-        
-            var tableau = document.getElementById("tab");
-            var row = tableau.insertRow();
-
-            var icon = row.insertCell(); 
-            var div = row.insertCell();
-            var FullName = row.insertCell();
-            var powerstats = row.insertCell();
-            var appearence = row.insertCell();
-            var placeOfBirth = row.insertCell();
-            var alignment = row.insertCell();
-
-            var imageName = ["background-image:url('", heroes[i].images.sm, "')"];
-=======
         let limitpage = sessionStorage.getItem('pagelength')
         let lasthero = sessionStorage.getItem('lasthero')
         let page = sessionStorage.getItem('pagenb')
@@ -146,7 +130,6 @@ export function display() {
             let placeOfBirth = row.insertCell();
             let alignment = row.insertCell();
             let imageName = ["background-image:url('", heroes[i].images.sm, "')"];
->>>>>>> Stashed changes
             imageName = imageName.join("");
             icon.style = imageName;
 
