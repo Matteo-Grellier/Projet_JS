@@ -24,9 +24,11 @@ On a :
 Notre est organiser en plusieurs fonctions dans le fichier main.js voir [arborescence](#Arborescence_du_projet)
 ## Répartition_des_tâches
 On a réparti les taches entre tout les membres de sorte à ce que personne ne fasse la meme chose pour éviter les problèmes
-Yann : Fonction Search
+Yann : Fonction Search, Pages par pages
 Matteo : Gestion du projet : Github,git,Trello
 Nicolas : Powerstats
 Luke : Image
  
 ## Choses_à_revoir_ou_à_améliorer
+ - La comprehénsion de Github
+ - 
