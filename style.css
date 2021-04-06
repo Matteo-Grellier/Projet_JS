@@ -3,3 +3,8 @@ h1 {
     color: red
 
 }
+
+td {
+    width: 45px;
+    height: 235px;
+}
