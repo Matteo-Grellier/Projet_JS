@@ -4,6 +4,7 @@ export function display() {
             return response.json();
         })
         .then(function (data) {
+            sessionStorage.setItem('datasave', data)
             document.getElementById("nuke").onclick = function () {
                 document.location.reload()
                 sessionStorage.clear()
@@ -90,6 +91,17 @@ export function display() {
                     sessionStorage.setItem('pagenb', page)
                 }
                 sessionStorage.setItem('pagelength', 100)
+            }
+            document.getElementById("reverse").onclick = function () { 
+                data.reverse()
+                data = JSON.stringify(data)
+                sessionStorage.setItem('data', data)
+            }
+            if (sessionStorage.getItem('data') == null) {
+
+            } else {
+                data = sessionStorage.getItem('data')
+                data = JSON.parse(data)
             }
             appendData(data);
             document.getElementById("srch").onclick = function() {srch(data)};
@@ -191,6 +203,6 @@ export function srch(heroes) {
         }
         
     }
-    sessionStorage("reccherche", finded)
-    console.log(finded)
+    finded = JSON.stringify(finded)
+    sessionStorage.setItem("data", finded)
 }
