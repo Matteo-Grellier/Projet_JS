@@ -9,6 +9,34 @@ export function display() {
                 document.location.reload()
                 sessionStorage.clear()
             }
+            document.getElementById("weight").onclick = function () {
+                if (sessionStorage.getItem('isSorted') == null) {
+                    data.sort(function(a, b){
+                        return parseInt(a.appearance.weight[1]) - parseInt(b.appearance.weight[1]);
+                    });
+                    data = JSON.stringify(data)
+                    sessionStorage.setItem('data', data)
+                    sessionStorage.setItem("isSorted", 1)
+                } else {
+                    data.reverse()
+                    data = JSON.stringify(data)
+                    sessionStorage.setItem('data', data)
+                }
+            }
+            document.getElementById("size").onclick = function () {
+                if (sessionStorage.getItem('isSorted2') == null) {
+                    data.sort(function(a, b){
+                        return parseInt(a.appearance.height[1]) - parseInt(b.appearance.height[1]);
+                    });
+                    data = JSON.stringify(data)
+                    sessionStorage.setItem('data', data)
+                    sessionStorage.setItem("isSorted2", 1)
+                } else {
+                    data.reverse()
+                    data = JSON.stringify(data)
+                    sessionStorage.setItem('data', data)
+                }
+            }
             document.getElementById("page-nxt").onclick = function () {
                 let pagelength = sessionStorage.getItem('pagelength')
                 let pagenumber = sessionStorage.getItem('pagenb')
@@ -148,7 +176,7 @@ export function display() {
             div.innerHTML = 'Name: ' + heroes[i].name;
             FullName.innerHTML = 'Full Name: ' + heroes[i].biography.fullName;
             powerstats.innerHTML = 'Intelligence: ' + heroes[i].powerstats.intelligence + '/ Strength: ' + heroes[i].powerstats.strength + '/ Speed: ' + heroes[i].powerstats.speed + '/ Durability: ' + heroes[i].powerstats.durability + '/ Power: ' + heroes[i].powerstats.power + '/ Combat: ' + heroes[i].powerstats.combat;
-            appearence.innerHTML = 'Race: ' + heroes[i].appearance.race + ' / Gender: ' + heroes[i].appearance.gender + '\n / Height: ' + heroes[i].appearance.height + ' / Weight: ' + heroes[i].appearance.weight;
+            appearence.innerHTML = 'Race: ' + heroes[i].appearance.race + ' / Gender: ' + heroes[i].appearance.gender + '\n / Height: ' + heroes[i].appearance.height[0] + ", " + heroes[i].appearance.height[1] + ' / Weight: ' + heroes[i].appearance.weight[0] + ", " + heroes[i].appearance.weight[1];
             placeOfBirth.innerHTML = 'Place of Birth: ' + heroes[i].biography.placeOfBirth;
             alignment.innerHTML = heroes[i].biography.alignment;
             mainContainer.appendChild(tableau);
