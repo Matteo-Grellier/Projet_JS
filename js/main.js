@@ -91,6 +91,17 @@ export function display() {
                 }
                 sessionStorage.setItem('pagelength', 100)
             }
+            document.getElementById("reverse").onclick = function () { 
+                data.reverse()
+                data = JSON.stringify(data)
+                sessionStorage.setItem('data', data)
+            }
+            if (sessionStorage.getItem('data') == null) {
+
+            } else {
+                data = sessionStorage.getItem('data')
+                data = JSON.parse(data)
+            }
             appendData(data);
             document.getElementById("srch").onclick = function() {srch(data)};
         })
