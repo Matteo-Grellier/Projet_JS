@@ -1,8 +1,8 @@
 h1 {
     color: black;
     font-size: 30px;
-    position: absolute;
-    right: 850px;
+    position: relative;
+    left: 600px;
 }
 
 td {
@@ -55,7 +55,7 @@ table {
  div.btn {
     position: absolute;
     right: 50px;
-    top: 85px;
+    top: 65px;
  }
 
  div.search {
@@ -66,11 +66,11 @@ table {
 
  div.page {
     position: absolute;
-    top: 165px;
+    top: 140px;
     right: 50px;
  }
 
  div.tri {
-   position: relative;
-   top: 45px;
+   position: absolute;
+   top: 85px;
  }
