@@ -17,13 +17,13 @@ export function display() {
                 pagenumber = parseInt(pagenumber, 10) + 1
                 let index = pagelength * pagenumber
                 if (parseInt(pagenumber) * parseInt(pagelength) > parseInt(sessionStorage.getItem('herolength'))) {
-                    pagenumber = pagenumber-2
+                    pagenumber = pagenumber - 2
                 } else {
-                sessionStorage.setItem('lasthero', index)
+                    sessionStorage.setItem('lasthero', index)
                 }
                 sessionStorage.setItem('pagenb', pagenumber)
             }
-            document.getElementById("page-pre").onclick = function() {
+            document.getElementById("page-pre").onclick = function () {
                 let pagelength = sessionStorage.getItem('pagelength')
                 let pagenumber = sessionStorage.getItem('pagenb')
                 if (pagenumber == null) {
@@ -38,27 +38,27 @@ export function display() {
             document.getElementById("btn-10").onclick = function () {
                 let before = sessionStorage.getItem('pagelength')
                 if (before == 100) {
-                    let page = sessionStorage.getItem('pagenb')*10
+                    let page = sessionStorage.getItem('pagenb') * 10
                     sessionStorage.setItem('pagenb', page)
                 } else if (before == 20) {
-                    let page = sessionStorage.getItem('pagenb')*2
+                    let page = sessionStorage.getItem('pagenb') * 2
                     sessionStorage.setItem('pagenb', page)
                 } else if (before == 50) {
-                    let page = sessionStorage.getItem('pagenb')*5
+                    let page = sessionStorage.getItem('pagenb') * 5
                     sessionStorage.setItem('pagenb', page)
                 }
                 sessionStorage.setItem('pagelength', 10)
             }
-            document.getElementById("btn-20").onclick = function() {
+            document.getElementById("btn-20").onclick = function () {
                 let before = sessionStorage.getItem('pagelength')
                 if (before == 10) {
-                    let page = Math.floor(sessionStorage.getItem('pagenb')/2)
+                    let page = Math.floor(sessionStorage.getItem('pagenb') / 2)
                     sessionStorage.setItem('pagenb', page)
                 } else if (before == 100) {
-                    let page = sessionStorage.getItem('pagenb')*5
+                    let page = sessionStorage.getItem('pagenb') * 5
                     sessionStorage.setItem('pagenb', page)
                 } else if (before == 50) {
-                    let page = sessionStorage.getItem('pagenb')*2.5
+                    let page = sessionStorage.getItem('pagenb') * 2.5
                     sessionStorage.setItem('pagenb', page)
                 }
                 sessionStorage.setItem('pagelength', 20)
@@ -66,13 +66,13 @@ export function display() {
             document.getElementById("btn-50").onclick = function () {
                 let before = sessionStorage.getItem('pagelength')
                 if (before == 10) {
-                    let page = Math.floor(sessionStorage.getItem('pagenb')/5)
+                    let page = Math.floor(sessionStorage.getItem('pagenb') / 5)
                     sessionStorage.setItem('pagenb', page)
                 } else if (before == 20) {
-                    let page = Math.floor(sessionStorage.getItem('pagenb')/2.5)
+                    let page = Math.floor(sessionStorage.getItem('pagenb') / 2.5)
                     sessionStorage.setItem('pagenb', page)
                 } else if (before == 100) {
-                    let page = sessionStorage.getItem('pagenb')*2
+                    let page = sessionStorage.getItem('pagenb') * 2
                     sessionStorage.setItem('pagenb', page)
                 }
                 sessionStorage.setItem('pagelength', 50)
@@ -80,34 +80,32 @@ export function display() {
             document.getElementById("btn-100").onclick = function () {
                 let before = sessionStorage.getItem('pagelength')
                 if (before == 10) {
-                    let page = Math.floor(sessionStorage.getItem('pagenb')/10)
+                    let page = Math.floor(sessionStorage.getItem('pagenb') / 10)
                     sessionStorage.setItem('pagenb', page)
                 } else if (before == 20) {
-                    let page = Math.floor(sessionStorage.getItem('pagenb')/5)
+                    let page = Math.floor(sessionStorage.getItem('pagenb') / 5)
                     sessionStorage.setItem('pagenb', page)
                 } else if (before == 50) {
-                    let page = Math.floor(sessionStorage.getItem('pagenb')/2)
+                    let page = Math.floor(sessionStorage.getItem('pagenb') / 2)
                     sessionStorage.setItem('pagenb', page)
                 }
                 sessionStorage.setItem('pagelength', 100)
             }
             appendData(data);
-            document.getElementById("srch").onclick = function() {srch(data)};
+            document.getElementById("srch").onclick = function () { srch(data) };
         })
-    
 
         .catch(function (err) {
             console.log('error: ' + err);
         });
 
-        
     function appendData(heroes) {
         sessionStorage.setItem('herolength', heroes.length)
         var mainContainer = document.getElementById("myData")
         let limitpage = sessionStorage.getItem('pagelength')
         let lasthero = sessionStorage.getItem('lasthero')
         let page = sessionStorage.getItem('pagenb')
-        if (limitpage == null ) {
+        if (limitpage == null) {
             sessionStorage.setItem('pagelength', 20)
             limitpage = 20
         }
@@ -117,12 +115,11 @@ export function display() {
         }
         console.log(limitpage, lasthero, sessionStorage.getItem('pagenb'))
         let lp = parseInt(lasthero) + parseInt(limitpage)
-        for (let i = lasthero  ; i < lp; i++) {
-        
+        for (let i = lasthero; i < lp; i++) {
             let tableau = document.getElementById("tab");
             let row = tableau.insertRow();
 
-            let icon = row.insertCell(); 
+            let icon = row.insertCell();
             let div = row.insertCell();
             let FullName = row.insertCell();
             let powerstats = row.insertCell();
@@ -154,42 +151,29 @@ export function srch(heroes) {
     for (let i = 0; i < heroes.length; i++) {
         valid.push(false)
         for (const property in heroes[i]) {
-
             if (typeof heroes[i][property] == 'object') {
-
                 for (const subproperty in heroes[i][property]) {
-
                     if (typeof heroes[i][property][subproperty] == 'object') {
-
                         for (const sublist in heroes[i][property][subproperty]) {
-
                             if (search.test(heroes[i][property][subproperty][sublist]) == true) {
                                 valid[i] = true
-
                             }
                         }
                     } else {
-
                         if (search.test(heroes[i][property][subproperty]) == true) {
                             valid[i] = true
-
                         }
                     }
                 }
             } else {
-
                 if (search.test(heroes[i][property]) == true) {
                     valid[i] = true
-
                 }
             }
         }
         if (valid[i] == true) {
             finded.push(heroes[i])
-            
-
         }
-        
     }
     sessionStorage("reccherche", finded)
     console.log(finded)

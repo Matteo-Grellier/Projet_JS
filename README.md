@@ -31,4 +31,5 @@ Luke : Image
  
 ## Choses_à_revoir_ou_à_améliorer
  - La comprehénsion de Github
+ - Meilleur gestion des branches 
  - 
