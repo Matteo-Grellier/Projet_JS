@@ -1,5 +1,68 @@
 h1 {
-
-    color: red
-
+    color: black;
+    font-size: 30px;
 }
+
+td {
+    width: 50px;
+    height: 235px;
+}
+
+body {
+    background-color: #A7A6B6
+}
+
+table {
+    background-color: #9392A2;
+    font-size: 20px;
+}
+
+ button {
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    background-color: black;
+    font-size: 12px;
+    border-radius: 12px;
+    text-transform: uppercase;
+    box-shadow: 0 9px #9392A2;
+    cursor: pointer;
+    outline: none;
+ }
+
+ button:hover {
+    transform: translateY(3px);
+    box-shadow: 0 6px #9392A2;
+ }
+
+ button:active {
+    transform: translateY(7px);
+    box-shadow: 0 2px #9392A2;
+ }
+
+ input {
+    background-color: #9392A2;
+    border-radius: 12px;
+    padding: 15px 20px;
+    border: none;
+    font-size: 18px;
+    border-radius: 12px;
+    outline: none;
+ }
+
+ div.btn {
+    position: absolute;
+    right: 50px;
+    top: 85px;
+ }
+
+ div.search {
+    position: absolute;
+    right: 850px;
+    top: 85px;
+ }
+
+ div.page {
+    position: absolute;
+    top: 100px;
+ }
