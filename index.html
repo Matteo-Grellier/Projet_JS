@@ -13,27 +13,33 @@
     <h1> Projet JS : Find your SuperHeroe ?</h1>
     <br>
     <br>
-    <search>
-        <input type="text" id="srchContent">
-        <button type="submit" id="srch">search</button>
+    <form>
+        <div class="search"></div>
+            <input type="text" id="srchContent">
+            <button type="submit" id="srch">search</button>
 
-        <button type="submit" id="nuke">clear search</button>
-    </search>
+            <button type="submit" id="nuke">clear search</button>
+        </div>
+    </form>
     <br>
-    <page>
-        <button id="reverse" type="submit">tri</button>
-        <button id="page-pre" type="submit">page precédente</button>
-        <button id="page-nxt" type="submit">page suivante</button>
-    </page>
+    <form>
+        <div class="btn"></div>
+            <button id="reverse" type="submit">tri</button>
+            <button id="page-pre" type="submit">page precédente</button>
+            <button id="page-nxt" type="submit">page suivante</button>
+        </div>
+    </form>
     <br>
-    <btn>
-        <text>Choose page size</text>
-        <br>
-        <button id="btn-10" type="submit" name="button-10" value="10">10</button>
-        <button id="btn-20" type="submit" name="button-20" value="20">20</button>
-        <button id="btn-50" type="submit" name="button-50" value="50">50</button>
-        <button id="btn-100" type="submit" name="button-100" value="100">100</button>
-    </btn>
+    <form>
+        <div class="page"></div>
+            <text>Choose page size</text>
+            <br>
+            <button id="btn-10" type="submit" name="button-10" value="10">10</button>
+            <button id="btn-20" type="submit" name="button-20" value="20">20</button>
+            <button id="btn-50" type="submit" name="button-50" value="50">50</button>
+            <button id="btn-100" type="submit" name="button-100" value="100">100</button>
+        </div>
+    </from>
     <br>
     <br>
     <div id="myData"></div>
