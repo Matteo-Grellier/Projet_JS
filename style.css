@@ -22,10 +22,9 @@ h1 {
         border: 1px solid black;
     }
 
-    #tab th {
-        padding-top: 12px;
-        padding-bottom: 12px;
-        text-align: left;
-        background-color: #4CAF50;
-        color: white;
-    }
+}
+
+td {
+    width: 45px;
+    height: 235px;
+}
