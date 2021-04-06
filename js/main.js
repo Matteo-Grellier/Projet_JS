@@ -4,6 +4,7 @@ export function display() {
             return response.json();
         })
         .then(function (data) {
+            sessionStorage.setItem('datasave', data)
             document.getElementById("nuke").onclick = function () {
                 document.location.reload()
                 sessionStorage.clear()
@@ -202,6 +203,6 @@ export function srch(heroes) {
         }
         
     }
-    sessionStorage("reccherche", finded)
-    console.log(finded)
+    finded = JSON.stringify(finded)
+    sessionStorage.setItem("data", finded)
 }
