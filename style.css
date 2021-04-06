@@ -1,17 +1,11 @@
-h1 {
-    color: black;
-    font-size: 30px;
-    position: relative;
-    left: 600px;
-}
-
 td {
     width: 50px;
     height: 235px;
 }
 
 body {
-    background-color: #A7A6B6
+    background-color: #A7A6B6;
+    font-family: 'Codystar';
 }
 
 table {
@@ -61,7 +55,7 @@ table {
  div.search {
     position: absolute;
     right: 850px;
-    top: 100px;
+    top: 120px;
  }
 
  div.page {
@@ -74,3 +68,30 @@ table {
    position: absolute;
    top: 85px;
  }
+
+ @import url('https://fonts.googleapis.com/css?family=Codystar:300&display=swap');
+
+
+.neons h1 {
+
+   position: relative;
+   left: 600px;
+  font-size: 40px;
+   font-weight: bold;
+  -webkit-animation: glow 2s ease-in-out infinite alternate;
+  -moz-animation: glow 2s ease-in-out infinite alternate;
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes glow {
+     from {
+      color: BLACK;
+    text-shadow: 0 0 20px black, 0 0 30px black, 0 0 40px black, 0 0 50px black, 0 0 60px black, 0 0 70px black, 0 0 80px black, 0 1 90px black;
+  }
+  
+  to {
+   color: rgb(0, 0, 0);
+   text-shadow: 0 0 10px #db1717, 0 0 20px #db1717, 0 0 30px #db1717, 0 0 40px #db1717, 0 0 50px #db1717, 0 0 60px #db1717, 0 0 70px #db1717, 0 0 90px #db1717;
+  }
+}
+
