@@ -2,7 +2,15 @@
 
 ## Introdution_au_projet
 
-Ce projet consiste à récupérer des données d'un fichier json, les filtrer, tout ça à l'aide d'un fichier JavaScript et enfin, d'afficher les données filtrer dans un tableau dans une page html. 
+Ce projet consiste à récupérer des données d'un fichier json et d'ensuite pouvoir :
+
+ - Les afficher dans un tableau 
+ - Trier ces données par colonnes
+ - Effectuer une recherche pour un element en particulier dans le tableau
+ - Afficher un certain nombres d'elements par pages
+ - Afficher la page suivant et la page précédente
+
+On doit aussi pouvoir chercher un element en particulier das le tableau
 
 ## Comment_l'utiliser
 
@@ -21,15 +29,16 @@ On a :
  - Le README.MD
  - Et le fichier style.css pour personaliser la page
 ## Organisation_du_code
-Notre est organiser en plusieurs fonctions dans le fichier main.js voir [arborescence](#Arborescence_du_projet)
+Notre programme est organiser en plusieurs fonctions dans le fichier main.js voir l'[arborescence](#Arborescence_du_projet)
 ## Répartition_des_tâches
 On a réparti les taches entre tout les membres de sorte à ce que personne ne fasse la meme chose pour éviter les problèmes
-Yann : Fonction recherche, Paginations, tri des noms,
-Matteo : Gestion du projet : Github,git,Trello
-Nicolas : Powerstats, récupérer les données du json
-Luke : icone pour chaque héros, css
+Yann : Fonction recherche, Paginations, tri
+Matteo : Gestion du projet : Github, git, Trello, Readme.md
+Nicolas : Powerstats, récupérer les données du json, fonction recherche
+Luke : icone pour chaque héros, css, fonction recherche
  
 ## Choses_à_revoir_ou_à_améliorer
- - La comprehénsion de Github
+ - La comprehénsion de Git et Github
  - Meilleur gestion des branches 
- - 
+ - Meilleur lecture du sujet
+ - Meilleur gestion du temps
