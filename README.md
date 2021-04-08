@@ -27,7 +27,7 @@ On a :
 - Le README.md
 - Et le fichier style.css pour personaliser la page
 ## Organisation_du_code
-Notre programme est organiser en plusieurs fonctions dans le fichier ``main.js`` voir l'[arborescence](#Arborescence_du_projet)
+Notre programme est organiser en plusieurs fonctions dans le fichier ``main.js``, un exemple ci-dessous : ![](./images/Capture_d’écran_du_code.png)
 ## Répartition_des_tâches
 On a réparti les taches entre tout les membres de sorte à ce que personne ne fasse la meme chose pour éviter les problèmes.
 
