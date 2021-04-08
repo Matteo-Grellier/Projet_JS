@@ -1,79 +1,121 @@
 td {
-    width: 50px;
-    height: 235px;
+   width: 50px;
+   height: 235px;
 }
 
 body {
+<<<<<<< HEAD
+   background-color: #A7A6B6;
+   font-family: 'Codystar';
+=======
     background-color: #A7A6B6;
     font-family: 'Codystar';
+>>>>>>> 3dc67c65f96416f8b561dd3b9d1100e14f511013
 }
 
 table {
-    background-color: #9392A2;
-    font-size: 20px;
+   background-color: #9392A2;
+   font-size: 20px;
 }
 
- button {
-    color: #fff;
-    padding: 10px 15px;
-    border: none;
-    background-color: black;
-    font-size: 12px;
-    border-radius: 12px;
-    text-transform: uppercase;
-    box-shadow: 0 9px #9392A2;
-    cursor: pointer;
-    outline: none;
- }
+button {
+   color: #fff;
+   padding: 10px 15px;
+   border: none;
+   background-color: black;
+   font-size: 12px;
+   border-radius: 12px;
+   text-transform: uppercase;
+   box-shadow: 0 9px #9392A2;
+   cursor: pointer;
+   outline: none;
+}
 
- button:hover {
-    transform: translateY(3px);
-    box-shadow: 0 6px #9392A2;
- }
+button:hover {
+   transform: translateY(3px);
+   box-shadow: 0 6px #9392A2;
+}
 
- button:active {
-    transform: translateY(7px);
-    box-shadow: 0 2px #9392A2;
- }
+button:active {
+   transform: translateY(7px);
+   box-shadow: 0 2px #9392A2;
+}
 
- input {
-    background-color: #9392A2;
-    border-radius: 12px;
-    padding: 15px 20px;
-    border: none;
-    font-size: 18px;
-    border-radius: 12px;
-    outline: none;
- }
+input {
+   background-color: #9392A2;
+   border-radius: 12px;
+   padding: 15px 20px;
+   border: none;
+   font-size: 18px;
+   border-radius: 12px;
+   outline: none;
+}
 
- div.btn {
-    position: absolute;
-    right: 50px;
-    top: 65px;
- }
-
+<<<<<<< HEAD
+div.btn {
+   position: absolute;
+   right: 50px;
+   top: 65px;
+}
+=======
  div.search {
     position: absolute;
     right: 850px;
     top: 120px;
  }
+>>>>>>> 3dc67c65f96416f8b561dd3b9d1100e14f511013
 
- div.page {
-    position: absolute;
-    top: 140px;
-    right: 50px;
- }
-
- div.tri {
+div.search {
    position: absolute;
+   right: 850px;
+   top: 120px;
+}
+
+div.page {
+   position: absolute;
+<<<<<<< HEAD
+   top: 140px;
+   right: 50px;
+}
+
+div.tri {
+  position: absolute;
+  top: 85px;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Codystar:300&display=swap');
+=======
    top: 85px;
  }
 
  @import url('https://fonts.googleapis.com/css?family=Codystar:300&display=swap');
+>>>>>>> 3dc67c65f96416f8b561dd3b9d1100e14f511013
 
 
 .neons h1 {
 
+<<<<<<< HEAD
+  position: relative;
+  left: 600px;
+ font-size: 40px;
+  font-weight: bold;
+ -webkit-animation: glow 2s ease-in-out infinite alternate;
+ -moz-animation: glow 2s ease-in-out infinite alternate;
+ animation: glow 2s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes glow {
+    from {
+     color: BLACK;
+   text-shadow: 0 0 20px black, 0 0 30px black, 0 0 40px black, 0 0 50px black, 0 0 60px black, 0 0 70px black, 0 0 80px black, 0 1 90px black;
+ }
+ 
+ to {
+  color: rgb(0, 0, 0);
+  text-shadow: 0 0 10px #db1717, 0 0 20px #db1717, 0 0 30px #db1717, 0 0 40px #db1717, 0 0 50px #db1717, 0 0 60px #db1717, 0 0 70px #db1717, 0 0 90px #db1717;
+ }
+}
+=======
    position: relative;
    left: 600px;
   font-size: 40px;
@@ -95,3 +137,4 @@ table {
   }
 }
 
+>>>>>>> 3dc67c65f96416f8b561dd3b9d1100e14f511013

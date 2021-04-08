@@ -162,18 +162,24 @@ export function display() {
             let div = row.insertCell();
             let FullName = row.insertCell();
             let powerstats = row.insertCell();
-            let appearence = row.insertCell();
+            let race = row.insertCell();
+            let gender = row.insertCell();
+            let height = row.insertCell();
+            let weight = row.insertCell();
             let placeOfBirth = row.insertCell();
             let alignment = row.insertCell();
             let imageName = ["background-image:url('", heroes[i].images.sm, "')"];
             imageName = imageName.join("");
             icon.style = imageName;
 
-            div.innerHTML = 'Name: ' + heroes[i].name;
-            FullName.innerHTML = 'Full Name: ' + heroes[i].biography.fullName;
+            div.innerHTML = heroes[i].name;
+            FullName.innerHTML = heroes[i].biography.fullName;
             powerstats.innerHTML = 'Intelligence: ' + heroes[i].powerstats.intelligence + '/ Strength: ' + heroes[i].powerstats.strength + '/ Speed: ' + heroes[i].powerstats.speed + '/ Durability: ' + heroes[i].powerstats.durability + '/ Power: ' + heroes[i].powerstats.power + '/ Combat: ' + heroes[i].powerstats.combat;
-            appearence.innerHTML = 'Race: ' + heroes[i].appearance.race + ' / Gender: ' + heroes[i].appearance.gender + '\n / Height: ' + heroes[i].appearance.height[0] + ", " + heroes[i].appearance.height[1] + ' / Weight: ' + heroes[i].appearance.weight[0] + ", " + heroes[i].appearance.weight[1];
-            placeOfBirth.innerHTML = 'Place of Birth: ' + heroes[i].biography.placeOfBirth;
+            race.innerHTML = heroes[i].appearance.race;
+            gender.innerHTML = heroes[i].appearance.gender;
+            height.innerHTML = heroes[i].appearance.height[0] + ", " + heroes[i].appearance.height[1];
+            weight.innerHTML = heroes[i].appearance.weight[0] + ", " + heroes[i].appearance.weight[1];
+            placeOfBirth.innerHTML = heroes[i].biography.placeOfBirth;
             alignment.innerHTML = heroes[i].biography.alignment;
             mainContainer.appendChild(tableau);
             sessionStorage.setItem('currentindex', i)
@@ -187,6 +193,7 @@ export function srch(heroes) {
     let finded = []
     let valid = []
     console.log(research)
+
     for (let i = 0; i < heroes.length; i++) {
         valid.push(false)
         for (const property in heroes[i]) {
