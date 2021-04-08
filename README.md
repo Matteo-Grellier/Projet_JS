@@ -30,14 +30,17 @@ On a :
 Notre programme est organiser en plusieurs fonctions dans le fichier ``main.js`` voir l'[arborescence](#Arborescence_du_projet)
 ## Répartition_des_tâches
 On a réparti les taches entre tout les membres de sorte à ce que personne ne fasse la meme chose pour éviter les problèmes.
+
 Yann : Fonction recherche, Paginations, tri.
+
 Matteo : Gestion du projet : Github, git, Trello, Readme.md
+
 Nicolas : Powerstats, récupérer les données du json, fonction recherche
+
 Luke : Icone pour chaque héros, css, fonction recherche
 
 ## Choses_à_revoir_ou_à_améliorer
-- La comprehénsion de Git et Github
-- Meilleur gestion des branches 
-- Meilleur lecture du sujet
-- Meilleur gestion du temps
+- Améliorer la compréhension de Git et Github en utilisant les bonnes pratiques (Ex: 1 branche par feature).
+- Meilleure lecture du sujet en créant une liste de toutes les fonctions qui doivent apparaître.
+- Meilleure gestion du temps en utilisant mieux l'outil Trello.
 

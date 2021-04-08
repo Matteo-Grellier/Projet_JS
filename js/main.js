@@ -64,6 +64,8 @@ export function display() {
                     sessionStorage.setItem('pagenb', pagenumber)
                 }
             }
+
+            // bouton qui va nous pemettre donc onclick, d'afficher 10 personnages
             document.getElementById("btn-10").onclick = function () {
                 let before = sessionStorage.getItem('pagelength')
                 if (before == 100) {
@@ -78,6 +80,8 @@ export function display() {
                 }
                 sessionStorage.setItem('pagelength', 10)
             }
+
+            // bouton qui va nous pemettre donc onclick, d'afficher 20 personnages
             document.getElementById("btn-20").onclick = function () {
                 let before = sessionStorage.getItem('pagelength')
                 if (before == 10) {
@@ -92,6 +96,8 @@ export function display() {
                 }
                 sessionStorage.setItem('pagelength', 20)
             }
+
+            // bouton qui va nous pemettre donc onclick, d'afficher 50 personnages
             document.getElementById("btn-50").onclick = function () {
                 let before = sessionStorage.getItem('pagelength')
                 if (before == 10) {
@@ -106,6 +112,8 @@ export function display() {
                 }
                 sessionStorage.setItem('pagelength', 50)
             }
+
+            // bouton qui va nous pemettre donc onclick, d'afficher 100 personnages
             document.getElementById("btn-100").onclick = function () {
                 let before = sessionStorage.getItem('pagelength')
                 if (before == 10) {
@@ -144,7 +152,9 @@ export function display() {
         let limitpage = sessionStorage.getItem('pagelength')
         let lasthero = sessionStorage.getItem('lasthero')
         let page = sessionStorage.getItem('pagenb')
-        if (limitpage == null) {
+
+        // Mise en place du nombre de page par défaut qui est de 20
+        if (limitpage == null) { 
             sessionStorage.setItem('pagelength', 20)
             limitpage = 20
         }
@@ -154,11 +164,11 @@ export function display() {
         }
         console.log(limitpage, lasthero, sessionStorage.getItem('pagenb'))
         let lp = parseInt(lasthero) + parseInt(limitpage)
-        for (let i = lasthero; i < lp; i++) {
-            let tableau = document.getElementById("tab");
-            let row = tableau.insertRow();
+        for (let i = lasthero; i < lp; i++) { // on va parcourir le tableau d'hero
+            let tableau = document.getElementById("tab"); // on creer une variable qui va prendre pour information tout ce qui ce trouve dans l'id "tab"
+            let row = tableau.insertRow(); // on creer un tableau 
 
-            let icon = row.insertCell();
+            let icon = row.insertCell(); // dans ce tableau on ajoute les colonnes 
             let div = row.insertCell();
             let FullName = row.insertCell();
             let powerstats = row.insertCell();
@@ -168,11 +178,13 @@ export function display() {
             let weight = row.insertCell();
             let placeOfBirth = row.insertCell();
             let alignment = row.insertCell();
-            let imageName = ["background-image:url('", heroes[i].images.sm, "')"];
+            let imageName = ["background-image:url('", heroes[i].images.sm, "')"]; // on ajoute les icones des personnages dans le style de la page
             imageName = imageName.join("");
-            icon.style = imageName;
+            icon.style = imageName; 
 
-            div.innerHTML = heroes[i].name;
+
+            // Dans nos colonnes du html, on va ajouter les informations du fichier api
+            div.innerHTML = heroes[i].name; 
             FullName.innerHTML = heroes[i].biography.fullName;
             powerstats.innerHTML = 'Intelligence: ' + heroes[i].powerstats.intelligence + '/ Strength: ' + heroes[i].powerstats.strength + '/ Speed: ' + heroes[i].powerstats.speed + '/ Durability: ' + heroes[i].powerstats.durability + '/ Power: ' + heroes[i].powerstats.power + '/ Combat: ' + heroes[i].powerstats.combat;
             race.innerHTML = heroes[i].appearance.race;
@@ -181,7 +193,7 @@ export function display() {
             weight.innerHTML = heroes[i].appearance.weight[0] + ", " + heroes[i].appearance.weight[1];
             placeOfBirth.innerHTML = heroes[i].biography.placeOfBirth;
             alignment.innerHTML = heroes[i].biography.alignment;
-            mainContainer.appendChild(tableau);
+            mainContainer.appendChild(tableau); // le data va donc etre ajouter dans notre tableau 
             sessionStorage.setItem('currentindex', i)
         }
     }
@@ -193,7 +205,6 @@ export function srch(heroes) {
     let finded = []
     let valid = []
     console.log(research)
-
     for (let i = 0; i < heroes.length; i++) {
         valid.push(false)
         for (const property in heroes[i]) {
@@ -224,3 +235,17 @@ export function srch(heroes) {
     finded = JSON.stringify(finded)
     sessionStorage.setItem("data", finded)
 }
+
+/* const searchBar = document.forms['srchContent'].querySelector('input');
+searchBar.addEventListener('keyup', (e) => {
+  const term = e.target.value.toLowerCase();
+  const names = list.getElementsByTagName('td');
+  Array.from(names).forEach((name) => {
+    const title = book.firstElementChild.textContent;
+    if(title.toLowerCase().indexOf(e.target.value) != -1){
+      name.style.display = 'block';
+    } else {
+      book.style.display = 'none';
+    }
+  });
+}); */
