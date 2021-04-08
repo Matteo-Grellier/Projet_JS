@@ -71,41 +71,49 @@
     </table>
     <script>
       function sortTable(n) {
-        var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+        var table = 0;
+        var rows = 0;
+        var tri = 0;
+        var i = 0;
+        var a = 0;
+        var b = 0;
+        var shouldTri = 0;
+        var dir = 0;
+        var triCount = 0;
         table = document.getElementById("tab");
-        switching = true;
+        tri = true;
         dir = "asc"; 
-        while (switching) {
-          switching = false;
+        while (tri) {
+          tri = false;
           rows = table.rows;
           for (i = 1; i < (rows.length - 1); i++) {
-            shouldSwitch = false;
-            x = rows[i].getElementsByTagName("TD")[n];
-            y = rows[i + 1].getElementsByTagName("TD")[n];
+            shouldTri = false;
+            a = rows[i].getElementsByTagName("TD")[n];
+            b = rows[i + 1].getElementsByTagName("TD")[n];
             if (dir == "asc") {
-              if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
-                shouldSwitch= true;
+              if (a.innerHTML.toLowerCase() > b.innerHTML.toLowerCase()) {
+                shouldTri= true;
                 break;
               }
             } else if (dir == "desc") {
-              if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
-                shouldSwitch = true;
+              if (a.innerHTML.toLowerCase() < b.innerHTML.toLowerCase()) {
+                shouldTri = true;
                 break;
               }
             }
           }
-          if (shouldSwitch) {
+          if (shouldTri) {
             rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
-            switching = true;
-            switchcount ++;      
+            tri = true;
+            triCount ++;      
           } else {
-            if (switchcount == 0 && dir == "asc") {
+            if (triCount == 0 && dir == "asc") {
               dir = "desc";
-              switching = true;
+              tri = true;
             }
           }
         }
         }
-    </script>
+   </script>
 </body>
 </html>       
